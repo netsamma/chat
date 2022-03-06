@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+.wrapper {
+  background-color: #e8ba25;
+  padding: 20px;
+  font-family: "Libre Baskerville", serif;
+}
+
+.label {
+  width: 100%;
+  text-align: center;
+  /* border-bottom: 1px solid #916c05;*/
+  line-height: 0.05em;
+  background-color: #916c05;
+  margin: 10px 0 20px;
+  font-family: "Libre Baskerville", serif;
+}
+
+.label span {
+  background-color: #e8ba25;
+  padding: 0 10px;
+}
+
+input {
+  font-size: 25px;
+  font-weight: bold;
+  border: 0;
+  text-align: center;
+  background-color: #e8ba25;
+  font-family: inherit;
+  font-style: italic;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* .label {
+  position: relative;
+  font-size: 20px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #916c05;
+}
+
+.label:before,
+.label:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 50%;
+  height: 2px;
+  content: "\a0";
+  background-color: #916c05;
+}
+
+.label:before {
+  margin-left: -50%;
+  text-align: right;
+}
+
+.label span {
+  padding: 0 20px;
+}
+
+input {
+  font-size: 25px;
+  border: 0;
+  text-align: center;
+  background-color: #e8ba25;
+  font-family: inherit;
+  font-style: italic;
+  width: 100%;
+}
+
+.wrapper {
+  background-color: #e8ba25;
+  padding: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+} */
+
+/* how to add side line css */
+/* input hide border css */
