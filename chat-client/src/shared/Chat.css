@@ -1,10 +1,6 @@
 .chatbox {
   width: 40%;
-<<<<<<< HEAD:chat-client/src/shared/Chat.css
   margin: 30px auto;
-=======
-  margin: auto;
->>>>>>> bcc0dd19413792a8629c9f147b1e11d410deed1a:chat-client/src/components/Chat.css
   border-radius: 10px;
   background-color: #07387e;
   border: 1px solid rgb(94, 90, 90);
@@ -12,12 +8,7 @@
 
 .chat-heading{
   text-align: center;
-<<<<<<< HEAD:chat-client/src/shared/Chat.css
   line-height: 60px;
-=======
-  line-height: 80px;
-  
->>>>>>> bcc0dd19413792a8629c9f147b1e11d410deed1a:chat-client/src/components/Chat.css
 }
 
 .message-input{
@@ -55,11 +46,7 @@
 
 .messages {
   overflow-y: scroll;
-<<<<<<< HEAD:chat-client/src/shared/Chat.css
   height: 40vh;
-=======
-  height: 50vh;
->>>>>>> bcc0dd19413792a8629c9f147b1e11d410deed1a:chat-client/src/components/Chat.css
   padding: 20PX;
   background-color: #f9fafc;
 }

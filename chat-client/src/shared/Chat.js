@@ -20,7 +20,10 @@ const AlwaysScrollToBottom = () => {
 class Chat extends Component {
   constructor(props) {
     super(props);
-    this.state = { messages: messages, message: { from: "Ignazio", text: "" } };
+    this.state = { 
+      messages: messages, 
+      message: { username: props.username, text: "" } 
+    };
   }
 
   handleChange(e) {
@@ -56,7 +59,7 @@ class Chat extends Component {
           ...this.state.messages,
           {
             id: id+1,
-            from: message.from,
+            username: this.props.username,
             text: message.text,
           },
         ],
@@ -75,12 +78,11 @@ class Chat extends Component {
           <div className="chat-heading">
             <h3 className="white">Chat React e WebSockets da Arces</h3>
           </div>
-          {/* key={message.id ? message.id : 0} */}
           <div id="messages" className="messages">
             {this.state.messages.map((message) => {
               return (
                 <div id="message-wrapper" key={message.id ? message.id : 0}>
-                  <div className="message-from">{message.from}</div>
+                  <div className="message-from">{message.username}</div>
                   <div className="message-text">
                     <div className="bg-blue">{message.text}</div>
                   </div>
