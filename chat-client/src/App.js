@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginView />} exact />
           <Route path="/home" element={<HomeView />} />
-          <Route path="/chat" element={<ChatView />} />
+          <Route path="/chat/:username" element={<ChatView />} />
           <Route path="/who" element={<WhoView />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

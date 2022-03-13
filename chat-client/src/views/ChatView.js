@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Chat from '../shared/Chat'
+import { useParams } from 'react-router-dom'
 
-export default class ChatView extends Component {
-  render() {
+function ChatView() {
+	const { username } = useParams()
 	return (
-	  <Chat username="Ignazio"/>
+	  <Chat username={username}/>
 	)
-  }
+  
 }
+
+export default ChatView

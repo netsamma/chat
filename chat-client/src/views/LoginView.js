@@ -25,18 +25,18 @@ class LoginView extends Component {
   render() {
     if (this.state.islogged) {
       return (
-        <Navigate to="/chat" state={{ from: this.state.username }} />
+        <Navigate to={`/chat/${this.state.username}`} />
       )
     }else{
       return (
         <div className="main">
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <input placeholder='Nome' onChange={this.handleChange.bind(this)}></input>
-            <button>Login</button>
+            <input className='login-input' placeholder='Nome' onChange={this.handleChange.bind(this)}/>
+            <button className='login-button'>Login</button>
           </form>
         </div>
       );
-  }
+    }
   }
 }
 
