@@ -59,7 +59,7 @@ class Chat extends Component {
           ...this.state.messages,
           {
             id: id+1,
-            username: this.props.username,
+            username: message.username,
             text: message.text,
           },
         ],
