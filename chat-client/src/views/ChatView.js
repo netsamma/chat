@@ -1,9 +1,10 @@
 import React from 'react'
 import Chat from '../shared/Chat'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-function ChatView() {
-	const { username } = useParams()
+function ChatView(props) {
+	const location = useLocation()
+	let username = location.state
 	return (
 	  <Chat username={username}/>
 	)

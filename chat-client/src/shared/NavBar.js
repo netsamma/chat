@@ -12,8 +12,11 @@ export class Navbar extends Component {
       <Link to="/who" className="navbar-button">
         Chi siamo
       </Link>
-      <Link to="/chat/utente" className="navbar-button">
+      <Link to="/chat" className="navbar-button">
         Chat
+      </Link>
+      <Link to="/users" className="navbar-button">
+        Users
       </Link>
     </nav>
   );

@@ -1,8 +1,8 @@
-import './LoginView.css'
+import './Login.css'
 import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom';
 
-class LoginView extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +25,7 @@ class LoginView extends Component {
   render() {
     if (this.state.islogged) {
       return (
-        <Navigate to={`/chat/${this.state.username}`} />
+        <Navigate to={`/chat/`} state={this.state.username}/>
       )
     }else{
       return (
@@ -40,4 +40,4 @@ class LoginView extends Component {
   }
 }
 
-export default LoginView;
+export default Login;

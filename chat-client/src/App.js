@@ -4,9 +4,9 @@ import Navbar from './shared/NavBar';
 import ChatView from './views/ChatView';
 import HomeView from './views/HomeView';
 import WhoView from './views/WhoView';
-import LoginView from "./views/LoginView";
 import NotFound from "./views/NotFound";
-
+import Users from './shared/Users';
+import User from "./shared/User";
 
 function App() {
   return (
@@ -14,9 +14,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<LoginView />} exact />
-          <Route path="/home" element={<HomeView />} />
-          <Route path="/chat/:username" element={<ChatView />} />
+          <Route path="/" element={<HomeView />} exact />
+          <Route path="/chat" element={<ChatView />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/user/:id" element={<User />} />
           <Route path="/who" element={<WhoView />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

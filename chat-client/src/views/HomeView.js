@@ -1,6 +1,8 @@
+import Login from "../shared/Login";
+
 const HomeView = () => (
   <div>
-    Home page
+    <Login/>
   </div>
 );
 
