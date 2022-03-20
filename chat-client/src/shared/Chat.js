@@ -35,7 +35,6 @@ class Chat extends Component {
   // Manda il messaggio salvato sullo state e lo azzera
   sendMessage = () => {
     client.send(JSON.stringify(this.state.message));
-
     this.setState({
       message: {
         ...this.state.message,
@@ -49,6 +48,7 @@ class Chat extends Component {
       console.log("WebSocket Client Connected");
     };
     client.onmessage = (message) => {
+      console.log(message);
       message = JSON.parse(message.data)
       let id = this.state.messages.length
       this.setState({
@@ -73,14 +73,14 @@ class Chat extends Component {
       <div>
         <div className="chatbox">
           <div className="chat-heading">
-            <h3 className="white">Chat React e WebSockets</h3>
+            <h3 className="white">Chat React e WebSockets da Arces</h3>
           </div>
           {/* key={message.id ? message.id : 0} */}
           <div id="messages" className="messages">
             {this.state.messages.map((message) => {
               return (
-                <div id="wrapper" key={message.id ? message.id : 0}>
-                  <div className="message-from">{this.state.message.from}</div>
+                <div id="message-wrapper" key={message.id ? message.id : 0}>
+                  <div className="message-from">{message.from}</div>
                   <div className="message-text">
                     <div className="bg-blue">{message.text}</div>
                   </div>
