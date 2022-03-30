@@ -61,3 +61,14 @@
   padding: 20px 40px;
   border-radius: 15px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .chatbox {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
