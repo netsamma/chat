@@ -9,8 +9,8 @@ export class Navbar extends Component {
       <Link to="/" className="navbar-button">
         Home
       </Link>
-      <Link to="/who" className="navbar-button">
-        Chi siamo
+      <Link to="/voice" className="navbar-button">
+        Registra voce
       </Link>
       <Link to="/chat" className="navbar-button">
         Chat

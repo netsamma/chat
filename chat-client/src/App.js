@@ -18,7 +18,7 @@ function App() {
           <Route path="/chat" element={<ChatView />} />
           <Route path="/users" element={<Users />} />
           <Route path="/user/:id" element={<User />} />
-          <Route path="/who" element={<WhoView />} />
+          <Route path="/voice" element={<WhoView />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
