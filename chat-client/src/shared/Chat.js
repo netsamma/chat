@@ -1,14 +1,17 @@
+import { useRef, useEffect } from "react";
 import { Component } from "react";
 // import { w3cwebsocket as W3CWebSocket } from "websocket";
-import { useRef, useEffect } from "react";
+import Pusher from 'pusher-js';
+import axios from 'axios';
 import "./Chat.css";
 
+// Server node
 // const client = new W3CWebSocket("ws://localhost:8080/chat");
-const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
+// const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
 const messages = [
-  // {id:"1", text:"Dummy message 1"},
-  // {id:"2", text:"Dummy message 2"}
+  {id:"1", text:"Dummy message 1"},
+  {id:"2", text:"Dummy message 2"}
 ];
 
 const AlwaysScrollToBottom = () => {
@@ -37,38 +40,60 @@ class Chat extends Component {
 
   // Manda il messaggio salvato sullo state e lo azzera
   sendMessage = () => {
-    client.send(JSON.stringify(this.state.message));
+    // client.send(JSON.stringify(this.state.message));
     this.setState({
       message: {
         ...this.state.message,
         text: "",
       },
     });
+
+    let channelName = 'chat-channel';
+
+    axios.post(`http://localhost:5000/message?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
-    client.onopen = () => {
-      console.log("WebSocket Client Connected");
-    };
-    client.onmessage = (message) => {
-      console.log(message);
-      message = JSON.parse(message.data)
-      let id = this.state.messages.length
-      this.setState({
-        messages: [
-          ...this.state.messages,
-          {
-            id: id+1,
-            username: message.username,
-            text: message.text,
-          },
-        ],
-      });
-      console.log(this.state.messages);
-    };
-    client.onclose = () => {
-      console.log("WebSocket connection closed");
-    };
+
+    // Server node
+
+    // client.onopen = () => {
+    //   console.log("WebSocket Client Connected");
+    // };
+    // client.onmessage = (message) => {
+    //   console.log(message);
+    //   message = JSON.parse(message.data)
+    //   let id = this.state.messages.length
+    //   this.setState({
+    //     messages: [
+    //       ...this.state.messages,
+    //       {
+    //         id: id+1,
+    //         username: message.username,
+    //         text: message.text,
+    //       },
+    //     ],
+    //   });
+    //   console.log(this.state.messages);
+    // };
+    // client.onclose = () => {
+    //   console.log("WebSocket connection closed");
+    // };
+
+
+    
+    // Pusher
+
+    const pusher = new Pusher('a6f805542f862720c29e', {
+      cluster: 'eu',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('chat-channel');
+    channel.bind('message', function(data) {
+      alert(JSON.stringify(data));
+    });
+
   }
 
   render() {
