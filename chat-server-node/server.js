@@ -1,15 +1,18 @@
+const dotenv = require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const Pusher = require('pusher');
 const pusher = new Pusher({
-  appId: '1565028',
-  key: '4c421a35144eb7295cae',
-  secret: 'cb7d4de8f3505c12e8e6',
+  appId: process.env.PUSHER_APP_ID,
+  key: process.env.PUSHER_KEY,
+  secret: process.env.PUSHER_SECRET,
   cluster: 'eu',
   useTLS: true
 });
+
+// console.log("Key", process.env.PUSHER_KEY);
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,11 +27,11 @@ app.get('/', (req, res) => {
   res.send('blah');
 });
 
-
+// Use Postman
 app.post('/message', (req, res) => {
   console.log(req);
   const payload = req.body;
-  pusher.trigger('chat-channel', 'message', {
+  pusher.trigger('webchat-channel', 'message', {
     // username: req.body.username,
     username: "Pippo",
     // message: req.body.message
