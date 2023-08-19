@@ -9,22 +9,18 @@ import "./Chat.css";
 // const client = new W3CWebSocket("ws://localhost:8080/chat");
 // const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
-const messages = [
-  {id:"1", text:"Dummy message 1"},
-  {id:"2", text:"Dummy message 2"}
-];
+// const messages = [
+//   {id:"1", text:"Dummy message 1"},
+//   {id:"2", text:"Dummy message 2"}
+// ];
 
-const AlwaysScrollToBottom = () => {
-  const elementRef = useRef();
-  useEffect(() => elementRef.current.scrollIntoView());
-  return <div ref={elementRef} />;
-};
+let allMessages = [];
 
 class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      messages: messages, 
+      messages: [], 
       message: { username: props.username, text: "" } 
     };
   }
@@ -47,15 +43,15 @@ class Chat extends Component {
         text: "",
       },
     });
-
-    let channelName = 'chat-channel';
-
-    axios.post(`http://localhost:5000/message?channel=${channelName}`,this.state.message )
+    let channelName = 'webchat-channel';
+    axios.post(`http://localhost:8000/api/messages?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
 
-    // Server node
+    Pusher.logToConsole = true;
+
+    // Server node (custom)
 
     // client.onopen = () => {
     //   console.log("WebSocket Client Connected");
@@ -81,19 +77,27 @@ class Chat extends Component {
     // };
 
 
-    
-    // Pusher
+    // Server Pusher
 
-    const pusher = new Pusher('a6f805542f862720c29e', {
+    const pusher = new Pusher('4c421a35144eb7295cae', {
       cluster: 'eu',
       encrypted: true
     });
 
-    var channel = pusher.subscribe('chat-channel');
-    channel.bind('message', function(data) {
-      alert(JSON.stringify(data));
-    });
+    var channel = pusher.subscribe('webchat-channel');
+    channel.bind('message', (data) => {
+      this.setState(prevState => ({
+        messages: [...prevState.messages, data]
+      }))
+      
+   });
 
+
+
+
+  }
+
+  componentDidUpdate(){
   }
 
   render() {
@@ -134,6 +138,14 @@ class Chat extends Component {
     );
   }
 }
+
+
+const AlwaysScrollToBottom = () => {
+  const elementRef = useRef();
+  useEffect(() => elementRef.current.scrollIntoView());
+  return <div ref={elementRef} />;
+};
+
 
 export default Chat;
 
