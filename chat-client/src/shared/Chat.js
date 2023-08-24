@@ -89,7 +89,7 @@ class Chat extends Component {
       encrypted: true
     });
 
-    var channel = pusher.subscribe('private-channel');
+    var channel = pusher.subscribe('presence-channel');
     channel.bind('message', (data) => {
       this.setState(prevState => ({
         messages: [...prevState.messages, data]
