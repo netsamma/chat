@@ -9,6 +9,9 @@ import "./Chat.css";
 // const client = new W3CWebSocket("ws://localhost:8080/chat");
 // const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
+// const server_url = "http://localhost";
+const server_url = "chat-server-node-cw87ejddf-netsamma.vercel.app";
+
 // const messages = [
 //   {id:"1", text:"Dummy message 1"},
 //   {id:"2", text:"Dummy message 2"}
@@ -44,7 +47,7 @@ class Chat extends Component {
       },
     });
     let channelName = 'webchat-channel';
-    axios.post(`http://localhost:8000/api/messages?channel=${channelName}`,this.state.message )
+    axios.post(`${server_url}:8000/api/messages?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
