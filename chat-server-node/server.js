@@ -19,7 +19,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:4200']
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:5000', 
+    'http://localhost:4200',
+    'https://chat-iota-six-34.vercel.app/chat/',
+]
 }));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
