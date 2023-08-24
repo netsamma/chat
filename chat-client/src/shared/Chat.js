@@ -47,7 +47,9 @@ class Chat extends Component {
       },
     });
     let channelName = 'webchat-channel';
-    axios.post(`${server_url}/api/messages?channel=${channelName}`,this.state.message )
+    axios.get(server_url);
+
+    // axios.post(`${server_url}/api/messages?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
