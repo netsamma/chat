@@ -16,10 +16,18 @@ React-native <br/>
 
 ## Versione 2.0 - Pusher
 
+https://www.youtube.com/watch?v=Dw4vF2nftAE
+
+https://www.youtube.com/watch?v=pppwJ9gIrZ0
+
+https://dashboard.pusher.com/apps/1565028/getting_started
+
 Server
+https://github.com/scalablescripts/node-chat/blob/main/index.js
 https://www.youtube.com/watch?time_continue=457&v=pppwJ9gIrZ0&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dnodejs%2Bchat%2Bpusher%26oq%3Dnodejs%2Bchat%2Bpusher%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAo&source_ve_path=MTM5MTE3LDEzOTExNywxMzkxMTcsMjg2NjY&feature=emb_logo
 
 Client
+https://github.com/scalablescripts/react-chat/blob/main/src/App.js
 https://pusher.com/tutorials/react-websockets/#parent-container-component-appjs
 https://yatharthvyas.medium.com/correct-way-to-invoke-a-pusherjs-instance-in-a-reactjs-functional-component-c7c9c4e1e229
 https://github.com/pusher/pusher-js
