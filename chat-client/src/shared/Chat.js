@@ -48,7 +48,7 @@ class Chat extends Component {
     });
     let channelName = 'webchat-channel';
     // axios.get(server_url);
-    axios.post(`http://chat-server-node.vercel.app/api/messages?channel=${channelName}`,this.state.message )
+    axios.post(`https://chat-server-node.vercel.app/api/messages?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
@@ -56,6 +56,7 @@ class Chat extends Component {
     Pusher.logToConsole = true;
 
     // Server node (custom)
+    // Ciao
 
     // client.onopen = () => {
     //   console.log("WebSocket Client Connected");
