@@ -46,7 +46,7 @@ class Chat extends Component {
         text: "",
       },
     });
-    let channelName = 'webchat-channel';
+    let channelName = 'chat-channel';
     // axios.get(server_url);
     axios.post(`https://chat-server-node.vercel.app/api/messages?channel=${channelName}`,this.state.message )
   };
