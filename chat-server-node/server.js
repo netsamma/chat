@@ -23,7 +23,7 @@ app.use(cors({
     'http://localhost:3000', 
     'http://localhost:5000', 
     'http://localhost:4200',
-    'https://chat-iota-six-34.vercel.app/chat/',
+    'https://chat-iota-six-34.vercel.app',
 ]
 }));
 app.use(bodyParser.urlencoded({extended: false}));

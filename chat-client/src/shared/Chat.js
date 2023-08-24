@@ -10,7 +10,7 @@ import "./Chat.css";
 // const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
 // const server_url = "http://localhost:8000";
-const server_url = "chat-server-node-cw87ejddf-netsamma.vercel.app";
+const server_url = "chat-server-node.vercel.app";
 
 // const messages = [
 //   {id:"1", text:"Dummy message 1"},
