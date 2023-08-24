@@ -43,7 +43,7 @@ app.post('/api/messages', async (req, res) => {
     if(!process.env.PUSHER_KEY){
       throw new Error("Pusher key non settata")
     }
-    await pusher.trigger('presence-channel', 'message', {
+    await pusher.trigger('chat-channel', 'message', {
       username: req.body.username,
       text: req.body.text
     });
