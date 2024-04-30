@@ -1,8 +1,8 @@
 const dotenv = require('dotenv').config()
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const Pusher = require('pusher');
+const fs = require('fs');
 
 const pusher = new Pusher({
   appId: process.env.PUSHER_APP_ID,
@@ -12,10 +12,10 @@ const pusher = new Pusher({
   useTLS: true
 });
 
-// console.log("Key", process.env.PUSHER_KEY);
-
 const app = express();
+// Parse application/json
 app.use(express.json());
+// Parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors({
@@ -23,11 +23,11 @@ app.use(cors({
     'http://localhost:3000', 
     'http://localhost:5000', 
     'http://localhost:4200',
+    'http://localhost:8000',
     'https://chat-iota-six-34.vercel.app',
+    'https://ignaziosammarco.vercel.app/',
 ]
 }));
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 
 app.set('PORT', process.env.PORT || 8000);
 
@@ -35,8 +35,17 @@ app.get('/', (req, res) => {
   res.send('blah');
 });
 
+app.get('/chat', (req, res) => {
+    fs.readFile('chat.html', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.write(data.toString());
+      return res.end();
+    });
+});
+
+
 // Use Postman
-app.post('/api/messages', async (req, res) => {
+app.post('/api/message', async (req, res) => {
   console.log(req.body);
   try {
     const payload = req.body.text;
@@ -51,7 +60,6 @@ app.post('/api/messages', async (req, res) => {
   }
   res.send(req.body.text)
 });
-
 
 app.listen(app.get('PORT'), () => 
   console.log('Listening at ' + app.get('PORT'))

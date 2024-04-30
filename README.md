@@ -16,6 +16,10 @@ React-native <br/>
 
 ## Versione 2.0 - Pusher
 
+https://adebola-niran.medium.com/building-a-serverless-realtime-chat-application-with-pusher-and-nextjs-fb92f451c75d
+
+https://pusher.com/tutorials/react-websockets/
+
 https://www.youtube.com/watch?v=Dw4vF2nftAE
 
 https://www.youtube.com/watch?v=pppwJ9gIrZ0
