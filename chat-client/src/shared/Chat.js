@@ -10,8 +10,8 @@ import "./Chat.css";
 // const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
 // const server_url = "http://localhost:8000";
-const server_url = "https://chat-server-node.vercel.app";
 //const server_url ="https://chat-iota-six-34.vercel.app/chat-server-node.vercel.app"
+const server_url = "https://chat-server-node.vercel.app";
 
 // const messages = [
 //   {id:"1", text:"Dummy message 1"},

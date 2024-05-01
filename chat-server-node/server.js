@@ -26,6 +26,7 @@ app.use(cors({
     'http://localhost:8000',
     'https://chat-iota-six-34.vercel.app',
     'https://ignaziosammarco.vercel.app/',
+    'https://chat-netsamma.vercel.app/',
 ]
 }));
 
