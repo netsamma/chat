@@ -111,8 +111,8 @@ class Chat extends Component {
           <div id="messages" className="messages">
             {this.state.messages.map((message) => {
               return (
-                <div id="message-wrapper" key={message.id ? message.id : 0}>
-                  <div className="message-from">{message.username}</div>
+                <div className="message-wrapper" key={message.id ? message.id : 0}>
+                  <div className="message-from">~{message.username}</div>
                   <div className="message-text">
                     <div className="bg-blue">{message.text}</div>
                   </div>

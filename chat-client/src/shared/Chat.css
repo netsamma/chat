@@ -1,5 +1,5 @@
 .chatbox {
-  width: 40%;
+  width: 50%;
   margin: 30px auto;
   border-radius: 10px;
   background-color: #07387e;
@@ -24,23 +24,24 @@
   flex-grow: 1;
 }
 
-#message-wrapper {
-  display: flex;
-  align-items: baseline;
+.message-wrapper{
+  width: 50%;
+  background: #062c61;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 .message-from{
-  /* display: flex; 
-  align-items: center;*/
-  margin: 10px;
-  color: rgb(48, 47, 51);
+  margin: 0px 0px 5px 0px;
+  color: rgb(240, 141, 66);
+  font-size: 12px;
+  font-weight: 400;
 }
+
 .message-text {
-  /* display: flex; 
-  align-items: center;*/
-  padding: 20px 40px;
-  font-weight: 300;
-  font-size: 1.2rem;
+  color: rgb(216, 209, 238);
+  font-size: 1.1rem;
   flex-grow: 1;
 }
 
@@ -57,9 +58,6 @@
 }
 
 .bg-blue{
-  background: #478dee;
-  padding: 20px 40px;
-  border-radius: 15px;
 }
 
 
