@@ -10,14 +10,13 @@ import "./Chat.css";
 // const client = new WebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
 // const server_url = "http://localhost:8000";
-const server_url = "chat-server-node.vercel.app";
+const server_url = "https://chat-server-node.vercel.app";
+//const server_url ="https://chat-iota-six-34.vercel.app/chat-server-node.vercel.app"
 
 // const messages = [
 //   {id:"1", text:"Dummy message 1"},
 //   {id:"2", text:"Dummy message 2"}
 // ];
-
-let allMessages = [];
 
 class Chat extends Component {
   constructor(props) {
@@ -47,7 +46,6 @@ class Chat extends Component {
       },
     });
     let channelName = 'chat-channel';
-    // axios.get(server_url);
     axios.post(`${server_url}/api/message?channel=${channelName}`,this.state.message )
   };
 
@@ -55,8 +53,7 @@ class Chat extends Component {
 
     Pusher.logToConsole = true;
 
-    // Server node (custom)
-    // Ciao
+    // Server node (custom) su Heroku
 
     // client.onopen = () => {
     //   console.log("WebSocket Client Connected");
