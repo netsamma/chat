@@ -48,7 +48,7 @@ class Chat extends Component {
     });
     let channelName = 'chat-channel';
     // axios.get(server_url);
-    axios.post(`https://chat-server-node.vercel.app/api/message?channel=${channelName}`,this.state.message )
+    axios.post(`${server_url}/api/message?channel=${channelName}`,this.state.message )
   };
 
   componentDidMount() {
@@ -94,7 +94,6 @@ class Chat extends Component {
       this.setState(prevState => ({
         messages: [...prevState.messages, data]
       }))
-      
    });
 
 
