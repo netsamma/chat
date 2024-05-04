@@ -13,15 +13,14 @@
 
 .message-input{
   display: flex;
-  height: 40px;
-  margin: 20px
+  padding: 10px;
 }
 .message-input-text{
-  flex-grow: 3;
-  font-size: 1.2rem;
+  flex: 1; margin-right: 5px;
+  height: 30px;
 }
 .message-input-send{
-  flex-grow: 1;
+  flex: 0; width: 100%
 }
 
 .message-wrapper{

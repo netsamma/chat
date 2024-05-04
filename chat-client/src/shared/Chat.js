@@ -106,7 +106,7 @@ class Chat extends Component {
       <div>
         <div className="chatbox">
           <div className="chat-heading">
-            <h3 className="white">Chat React e WebSockets da Arces</h3>
+            <h3 className="white">Chat React Arces</h3>
           </div>
           <div id="messages" className="messages">
             {this.state.messages.map((message) => {
