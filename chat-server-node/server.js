@@ -54,12 +54,14 @@ app.post('/api/message', async (req, res) => {
       throw new Error("Pusher key non settata")
     }
     await pusher.trigger('chat-channel', 'message', {
+      id: id,
       username: req.body.username,
       text: req.body.text
     });
   } catch (error) {
   }
-  res.send(req.body.text)
+  id++;
+  res.send(req.body.text);
 });
 
 app.listen(app.get('PORT'), () => 
