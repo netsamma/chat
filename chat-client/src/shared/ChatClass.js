@@ -93,9 +93,6 @@ class Chat extends Component {
       }))
    });
 
-
-
-
   }
 
   componentDidUpdate(){
