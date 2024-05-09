@@ -39,6 +39,7 @@ const ChatFunction = (props) => {
     }
 
     const sendMessage = () => {
+      if(message.text==="") return
       fetch(`${server_url}/api/message?channel=${channelName}`, {
         method: 'POST',
         headers: {
@@ -47,6 +48,7 @@ const ChatFunction = (props) => {
         },
         body: JSON.stringify(message)
       })
+      setMessage({"username":props.username, "text":""})
     }
 
     return (
